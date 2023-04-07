@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Input Example</title>
+</head>
+
+<body>
+    <label for="number-input">Enter a number:</label>
+    <input type="number" id="number-input">
+    <button id="submit-btn">Submit</button>
+    <div id="result"></div>
+
+    <script>
+        const numberInput = document.getElementById('number-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const resultDiv = document.getElementById('result');
+
+        submitBtn.addEventListener('click', () => {
+            // We use the Number() function to convert the user's input to a number.
+            const enteredNumber = Number(numberInput.value);
+            if (!isNaN(enteredNumber)) {
+                //adds a new <p> element to the resultDiv element using the += operator to append to any existing content. 
+                resultDiv.innerHTML += `<p>The entered number is: ${enteredNumber}</p>`;
+            } else {
+                resultDiv.innerHTML += '<p>Please enter a valid number.</p>';
+            }
+        });
+    </script>
+</body>
+
+</html>
